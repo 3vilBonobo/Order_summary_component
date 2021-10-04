@@ -1,6 +1,7 @@
 :root {
   --Pale_blue: hsl(225, 100%, 94%);
   --Bright_blue: hsl(245, 75%, 52%);
+  --Bright_blue_hover: hsl(253, 82%, 63%);
   --Very_pale_blue: hsl(225, 100%, 98%);
   --Desaturated_blue: hsl(224, 23%, 55%);
   --Dark_blue: hsl(223, 47%, 23%);
@@ -14,7 +15,7 @@
 
 body {
   background-color: var(--Pale_blue);
-  background-image: url(./images/pattern-background-desktop.svg);
+  background-image: url(./images/pattern-background-mobile.svg);
   background-repeat: no-repeat;
   background-position: top;
   font-family: 'Red Hat Display', sans-serif;
@@ -27,10 +28,12 @@ body {
 }
 
 .container {
-  background-color: var(--Very_pale_blue);
-  width: 370px;
-  height: 80%;
+  position: relative;
+  background-color: white;
+  width: 330px;
+  height: 580px;
   border-radius: 10px;
+  margin: 10px;
 }
 .container img {
   width: 100%;
@@ -45,27 +48,78 @@ body {
 }
 .container .info h1 {
   color: var(--Dark_blue);
+  font-size: 24px;
+  font-weight: 900;
 }
 .container .info p {
   color: var(--Desaturated_blue);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 15px;
   text-align: center;
 }
 .container .info .plan-info {
+  background-color: var(--Very_pale_blue);
   display: flex;
   flex-direction: row;
+  width: 100%;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+.container .info .plan-info img {
+  width: 50px;
+  height: 50px;
+}
+
+.container .info .plan-info p {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--Dark_blue);
+}
+.container .info .plan-info span {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--Desaturated_blue);
+}
+.container .info .plan-info a {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--Bright_blue);
+  cursor: pointer;
+}
+.container .info .plan-info a:hover {
+  color: var(--Desaturated_blue);
+  text-decoration: none;
 }
 .container .info .payment {
   background-color: var(--Bright_blue);
   color: var(--Very_pale_blue);
+  font-size: 16px;
+  font-weight: 700;
   width: 100%;
+  border: none;
   border-radius: 10px;
-  padding: 10px;
+  margin-top: 20px;
+  padding: 15px 10px;
+  cursor: pointer;
+  box-shadow: 0px 15px 20px var(--Pale_blue);
+}
+.container .info .payment:hover {
+  background-color: var(--Bright_blue_hover);
 }
 .container .info .cancel {
-  color: var(--Dark_blue);
+  color: var(--Desaturated_blue);
+  font-weight: 700;
   text-align: center;
   border-radius: 10px;
+  margin-top: 20px;
   padding: 10px;
+  cursor: pointer;
+}
+.container .info .cancel:hover {
+  color: var(--Dark_blue);
 }
 .attribution {
   font-size: 11px;
@@ -73,4 +127,23 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url(./images/pattern-background-desktop.svg);
+  }
+  .container {
+    width: 400px;
+    height: 600px;
+  }
+  .container .info {
+    padding: 15px 40px 30px 40px;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-size: cover;
+  }
 }
